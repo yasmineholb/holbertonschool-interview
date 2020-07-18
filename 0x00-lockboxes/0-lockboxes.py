@@ -13,12 +13,19 @@ def dfs(visited, graph, node):
 
 def canUnlockAll(boxes):
     """ box """
+    lis = []
+    for i in range(len(boxes)):
+        for j in range(len(boxes[i])):
+            lis.append(boxes[i][j])
+    lis = set(lis)
+    for i in range(1, len(boxes)):
+        if i not in lis:
+            return False
+            break
     if boxes == []:
-        return False
+            return False
     elif boxes[0] == []:
         return False
-    elif boxes[0] == [0]:
-        return True
     else:
         graph = {i: boxes[i] for i in range(len(boxes))}
         visited = []
