@@ -13,11 +13,7 @@ def dfs(visited, graph, node):
 
 def canUnlockAll(boxes):
     """ box """
-    if boxes is None:
-        return False
-    elif boxes == []:
-        return False
-    elif boxes[0] is None:
+    if boxes == []:
         return False
     elif boxes[0] == []:
         return False
