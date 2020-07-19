@@ -11,6 +11,8 @@ def tests(boxes):
         return 0
     elif boxes[0] == [] or boxes[0] == [0]:
         return 0
+    else:
+        return b
 
 
 def iterative_dfs(graph, start, m):
