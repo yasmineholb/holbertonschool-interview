@@ -20,7 +20,7 @@ def iterative_dfs(graph, start, m):
         vertex = stack.pop()
         if vertex in path:
             continue
-        if vertex < m:
+        if type(vertex) == int and vertex < m and vertex > -1:
             path.append(vertex)
             for neighbor in graph[vertex]:
                 stack.append(neighbor)
