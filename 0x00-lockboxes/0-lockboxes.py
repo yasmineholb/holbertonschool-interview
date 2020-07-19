@@ -2,8 +2,33 @@
 """ boxes """
 
 
+def tests(boxes):
+    """ function """
+    cles = []
+    b = 1
+    if boxes == [[]]:
+        return b
+    elif boxes == []:
+        return 0
+    elif boxes[0] == []:
+        return 0
+    else:
+        for i in range(len(boxes)):
+            for j in range(len(boxes[i])):
+                cles.append(boxes[i][j])
+        cles = set(cles)
+        if 0 in cles:
+            cles.pop()
+        cles = list(cles)
+        if max(cles) > len(boxes)-1:
+            b = 0
+        if len(cles) < len(boxes)-1:
+            b = 0
+        return(b)
+
+
 def dfs(visited, graph, node):
-    """function """
+    """ function """
     if node not in visited:
         visited.append(node)
         for neighbour in graph[node]:
@@ -12,23 +37,8 @@ def dfs(visited, graph, node):
 
 
 def canUnlockAll(boxes):
-    """ box """
-    if(len(boxes) == 1) and (len(boxes[0]) > 0):
-        return True
-    if boxes is None:
-        return False
-    lis = []
-    for i in range(len(boxes)):
-        for j in range(len(boxes[i])):
-            lis.append(boxes[i][j])
-    lis = set(lis)
-    for i in range(1, len(boxes)):
-        if i not in lis:
-            return False
-            break
-    if boxes == []:
-            return False
-    elif boxes[0] == []:
+    b = tests(boxes)
+    if b == 0:
         return False
     else:
         graph = {i: boxes[i] for i in range(len(boxes))}
