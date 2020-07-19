@@ -27,31 +27,21 @@ def tests(boxes):
         return(b)
 
 
+def dfs(visited, graph, node):
+    """ function """
+    if node not in visited:
+        visited.append(node)
+        for neighbour in graph[node]:
+            dfs(visited, graph, neighbour)
+    return visited
+
+
 def canUnlockAll(boxes):
-    """ function"""
-    s = {}
-    vis = []
-    i = 1
+    """ Function """
     b = tests(boxes)
     if b == 0:
         return False
     else:
-        for i, j in enumerate(boxes):
-            s[i] = j
-    return(check(vis, s, i))
-
-
-def check(vis, s, i):
-    """function """
-    inv = []
-    if i not in vis:
-        vis.append(i)
-    for n in s[i]:
-        if n not in vis:
-            inv.append(n)
-    for m in inv:
-        check(vis, s, m)
-    if len(inv) == 0:
-        return(True)
-    else:
-        return(False)
+        graph = {i: boxes[i] for i in range(len(boxes))}
+        visited = []
+        return len(dfs(visited, graph, 0)) == len(boxes)
