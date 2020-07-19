@@ -10,7 +10,7 @@ def tests(boxes):
         return b
     elif boxes == []:
         return 0
-    elif boxes[0] == []:
+    elif boxes[0] == [] or boxes[0] == [0]:
         return 0
     else:
         for i in range(len(boxes)):
