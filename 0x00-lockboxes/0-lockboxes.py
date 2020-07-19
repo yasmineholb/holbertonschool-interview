@@ -3,11 +3,8 @@
 
 
 def tests(boxes):
-    """ function """
     cles = []
     b = 1
-    if not boxes:
-        return 0
     if boxes == [[]]:
         return b
     elif boxes == []:
@@ -29,21 +26,22 @@ def tests(boxes):
         return(b)
 
 
-def dfs(visited, graph, node):
-    """ function """
-    if node not in visited:
-        visited.append(node)
-        for neighbour in graph[node]:
-            dfs(visited, graph, neighbour)
-    return visited
+def iterative_dfs(graph, start):
+    stack, path = [start], []
+    while stack:
+        vertex = stack.pop()
+        if vertex in path:
+            continue
+        path.append(vertex)
+        for neighbor in graph[vertex]:
+            stack.append(neighbor)
+    return path
 
 
 def canUnlockAll(boxes):
-    """ Function """
     b = tests(boxes)
     if b == 0:
         return False
     else:
         graph = {i: boxes[i] for i in range(len(boxes))}
-        visited = []
-        return len(dfs(visited, graph, 0)) == len(boxes)
+        return len(iterative_dfs(graph, 0)) == len(boxes)
