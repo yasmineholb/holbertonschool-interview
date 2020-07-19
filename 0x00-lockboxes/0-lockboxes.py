@@ -6,6 +6,8 @@ def tests(boxes):
     """ function """
     cles = []
     b = 1
+    if not boxes:
+        return 0
     if boxes == [[]]:
         return b
     elif boxes == []:
