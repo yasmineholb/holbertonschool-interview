@@ -1,5 +1,5 @@
-#ifndef sandp
-#define sandp
+#ifndef _sandp_
+#define _sandp_
 #include <stdlib.h>
 #include <stdio.h>
 static void print_grid(int grid[3][3]);
