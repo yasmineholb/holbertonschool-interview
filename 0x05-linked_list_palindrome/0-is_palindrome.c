@@ -26,7 +26,7 @@ return (k);
 int is_palindrome(listint_t **head)
 {
 int s = listint_len(head);
-int arr[s];
+int arr[4000];
 int i;
 listint_t *nd = *head;
 while (nd)
