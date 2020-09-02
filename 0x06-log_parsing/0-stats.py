@@ -12,9 +12,9 @@ try:
         if len(spl) > 2:
             file_s += int(spl[-1])
             status = spl[-2]
-        if status in s:
-            j = s.index(status)
-            zros[j] += 1
+            if status in s:
+                j = s.index(status)
+                zros[j] += 1
         if (g % 10 == 0):
             print("File size: {}".format(file_s))
             for z in range(len(s)):
