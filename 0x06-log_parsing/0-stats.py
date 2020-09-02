@@ -16,7 +16,7 @@ try:
             j = s.index(status)
             zros[j] += 1
         if (g % 10 == 0):
-            print("size = {}".format(file_s))
+            print("File size: {}".format(file_s))
             for z in range(len(s)):
                 if zros[z] > 0:
                     print("{}: {}".format(s[z], zros[z]))
