@@ -8,10 +8,10 @@ zros = [0, 0, 0, 0, 0, 0, 0, 0]
 try:
     for l in sys.stdin:
         g += 1
-        linesp = l.split(" ")
-        if len(linesp) > 2:
-            file_s += int(linesp[-1])
-            status = linesp[-2]
+        spl = l.split(" ")
+        if len(spl) > 2:
+            file_s += int(spl[-1])
+            status = spl[-2]
         if status in s:
             j = s.index(status)
             zros[j] += 1
