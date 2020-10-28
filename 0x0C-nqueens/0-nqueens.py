@@ -17,7 +17,7 @@ board = [[0 for i in range(N)]for j in range(N)]
 k = 1
 
 
-def printSolution(board):
+def print_sol(board):
     global k
     k = k + 1
     S = []
@@ -49,25 +49,25 @@ def isSafe(board, row, col):
     return True
 
 
-def solveNQUtil(board, col):
+def solving(board, col):
     if (col == N):
-        printSolution(board)
+        print_sol(board)
         return True
     res = False
     for i in range(N):
         if (isSafe(board, i, col)):
             board[i][col] = 1
-            res = solveNQUtil(board, col + 1) or res
+            res = solving(board, col + 1) or res
             board[i][col] = 0
     return res
 
 
-def solveNQ():
+def solve():
     board = [[0 for j in range(N)]for i in range(N)]
-    if (solveNQUtil(board, 0) is False):
+    if (solving(board, 0) is False):
         print("Solution does not exist")
         return
     return
 
 
-solveNQ()
+solve()
