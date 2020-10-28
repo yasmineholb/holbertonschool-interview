@@ -11,8 +11,7 @@ if not sys.argv[1].isdigit():
 if int(sys.argv[1]) < 4:
     print("N must be at least 4")
     exit(1)
-com = sys.argv[1]
-N = int(com)
+N = int(sys.argv[1])
 board = [[0 for i in range(N)]for j in range(N)]
 k = 1
 
