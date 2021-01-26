@@ -7,7 +7,7 @@
 listint_t *find_listint_loop(listint_t *head)
 {
 listint_t *fast_p, *slow_p;
-if (head)
+if (head && (head->next) && (head->next->next))
 {
 slow_p = head;
 fast_p = head->next->next;
@@ -18,8 +18,6 @@ break;
 slow_p = slow_p->next;
 fast_p = fast_p->next->next;
 }
-if (!fast_p || !(fast_p->next))
-return (NULL);
 if (slow_p == fast_p)
 {
 fast_p = fast_p->next;
