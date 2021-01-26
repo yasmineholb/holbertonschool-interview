@@ -30,5 +30,5 @@ head = head->next;
 return (head);
 }
 }
-return (0);
+return (NULL);
 }
