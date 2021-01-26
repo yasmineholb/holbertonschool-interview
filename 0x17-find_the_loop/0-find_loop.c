@@ -18,6 +18,8 @@ break;
 slow_p = slow_p->next;
 fast_p = fast_p->next->next;
 }
+if (!fast_p || !(fast_p->next))
+return (NULL);
 if (slow_p == fast_p)
 {
 fast_p = fast_p->next;
