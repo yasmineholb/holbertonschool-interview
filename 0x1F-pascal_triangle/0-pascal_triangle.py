@@ -7,7 +7,7 @@ def pascal_triangle(n):
         triangle of n """
     s = []
     if n == 1:
-        return [1]
+        return [[1]]
     else:
         for i in range(n):
             p = [1]
@@ -17,5 +17,3 @@ def pascal_triangle(n):
                 p.append(1)
             s.append(p)
     return(s)
-                                                
-
