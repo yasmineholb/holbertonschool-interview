@@ -1,5 +1,5 @@
-#ifndef REG
-#define REG
+#ifndef REG_
+#define REG_
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>

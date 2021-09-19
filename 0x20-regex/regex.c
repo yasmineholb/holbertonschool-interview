@@ -3,7 +3,7 @@
  * regex_match - Function checks whether a given pattern matches a given string
  * @str: string
  * @pattern: reg expression
- * Return: 1 if the pattern matches the string or 0
+ * Return: 1 if the pattern matches the string or 0.
  */
 
 int regex_match(char const *str, char const *pattern)
