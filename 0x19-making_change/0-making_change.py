@@ -19,4 +19,4 @@ def makeChange(coins, total):
             if sum == total:
                 return counter
         i += 1
-    return -10
+    return -1
